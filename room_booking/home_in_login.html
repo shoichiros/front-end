@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/home.css">
+  <title>Home</title>
+</head>
+
+<body>
+  <div class="header">
+    <a class="header-title" href="">Conference Rooms Booking</a>
+    <div class="header-right">
+      <a href="">Logout</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <h2>Welcome admin</h2>
+    <p>What do you choose?</p>
+    <p>Please onclick button.</p>
+    <button id="ModalButton" class="content-button red" type="  button"><span>Booking List</span></button>
+    <button class="content-button green" type="button" onclick=""><span>Create New Room</span></button>
+    <button class="content-button green" type="button" onclick=""><span>Booking Room</span></button>
+  </div>
+
+  <div id="Modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <input class="search" id="Search" type="text" onkeyup="inputSearch()" placeholder="Search for rooms...">
+      <table class="table-list" id="Table">
+        <tr class="table-title">
+          <th>Booking Room</th>
+          <th>Conference Day</th>
+          <th>Conference Time</th>
+          <th>Booking Name</th>
+        </tr>
+        <tr class="table-content">
+          <td>A room</td>
+          <td>2019/10/28</td>
+          <td>From 9:00 to 10:00</td>
+          <td>admin</td>
+        </tr>
+        <tr class="table-content">
+          <td>B room</td>
+          <td>2019/10/28</td>
+          <td>From 9:00 to 10:00</td>
+          <td>tuser</td>
+        </tr>
+        <tr class="table-content">
+          <td>A room</td>
+          <td>2019/10/28</td>
+          <td>From 10:00 to 12:00</td>
+          <td>admin</td>
+        </tr>
+        <tr class="table-content">
+          <td>A room</td>
+          <td>2019/10/28</td>
+          <td>From 9:00 to 10:00</td>
+          <td>admin</td>
+        </tr>
+        <tr class="table-content">
+          <td>B room</td>
+          <td>2019/10/28</td>
+          <td>From 9:00 to 10:00</td>
+          <td>tuser</td>
+        </tr>
+        <tr class="table-content">
+          <td>A room</td>
+          <td>2019/10/28</td>
+          <td>From 10:00 to 12:00</td>
+          <td>admin</td>
+        </tr>
+        <tr class="table-content">
+          <td>A room</td>
+          <td>2019/10/28</td>
+          <td>From 9:00 to 10:00</td>
+          <td>admin</td>
+        </tr>
+        <tr class="table-content">
+          <td>B room</td>
+          <td>2019/10/28</td>
+          <td>From 9:00 to 10:00</td>
+          <td>tuser</td>
+        </tr>
+        <tr class="table-content">
+          <td>A room</td>
+          <td>2019/10/28</td>
+          <td>From 10:00 to 12:00</td>
+          <td>admin</td>
+        </tr>
+        <tr class="table-content">
+          <td>A room</td>
+          <td>2019/10/28</td>
+          <td>From 9:00 to 10:00</td>
+          <td>admin</td>
+        </tr>
+        <tr class="table-content">
+          <td>B room</td>
+          <td>2019/10/28</td>
+          <td>From 9:00 to 10:00</td>
+          <td>tuser</td>
+        </tr>
+        <tr class="table-content">
+          <td>A room</td>
+          <td>2019/10/28</td>
+          <td>From 10:00 to 12:00</td>
+          <td>admin</td>
+        </tr>
+        <tr class="table-content">
+          <td>A room</td>
+          <td>2019/10/28</td>
+          <td>From 10:00 to 12:00</td>
+          <td>admin</td>
+        </tr>
+        <tr class="table-content">
+          <td>A room</td>
+          <td>2019/10/28</td>
+          <td>From 9:00 to 10:00</td>
+          <td>admin</td>
+        </tr>
+        <tr class="table-content">
+          <td>B room</td>
+          <td>2019/10/28</td>
+          <td>From 9:00 to 10:00</td>
+          <td>tuser</td>
+        </tr>
+        <tr class="table-content">
+          <td>A room</td>
+          <td>2019/10/28</td>
+          <td>From 10:00 to 12:00</td>
+          <td>admin</td>
+        </tr>
+        <tr class="table-content">
+          <td>A room</td>
+          <td>2019/10/28</td>
+          <td>From 10:00 to 12:00</td>
+          <td>admin</td>
+        </tr>
+        <tr class="table-content">
+          <td>A room</td>
+          <td>2019/10/28</td>
+          <td>From 9:00 to 10:00</td>
+          <td>admin</td>
+        </tr>
+        <tr class="table-content">
+          <td>B room</td>
+          <td>2019/10/28</td>
+          <td>From 9:00 to 10:00</td>
+          <td>tuser</td>
+        </tr>
+        <tr class="table-content">
+          <td>A room</td>
+          <td>2019/10/28</td>
+          <td>From 10:00 to 12:00</td>
+          <td>admin</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Copyright©2019 All Rights Reserved / Created by Shoichiro Saito</p>
+  </div>
+  <script type="text/javascript" src="js/home.js"></script>
+</body>
+
+</html>
