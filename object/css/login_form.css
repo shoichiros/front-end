@@ -1,0 +1,57 @@
+.login {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.login__title {
+  text-align: center;
+}
+
+.login__form input,
+.login__form button {
+  cursor: pointer;
+  width: 100%;
+}
+
+.login__form input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 8px 0;
+  padding: 12px 0 12px 14px;
+  transition: 1s;
+}
+
+.login__form input:focus {
+  border: none;
+  border-bottom: 1px solid #00a7cf;
+}
+
+.login__form button {
+  background-color: #fff;
+  border-radius: 20px;
+  border: 2px solid #005ccc;
+  margin: 20px 0 0 0;
+  padding: 12px;
+  transition: 1s;
+}
+
+.login__form button:hover {
+  background-color: #005ccc;
+  color: #fff;
+}
+
+.login__signup {
+  text-align: center;
+}
+
+.login__signup-link a {
+  font-size: 12px;
+  text-decoration: none;
+  transition: 1s;
+}
+
+.login__signup-link a:hover {
+  padding: 10px;
+  border: 1px solid #005ccc;
+  border-radius: 20px;
+}
