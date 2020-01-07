@@ -1,6 +1,6 @@
-var modal = document.getElementById("Modal");
-var button = document.getElementById("ModalButton");
-var span = document.getElementsByClassName("close")[0];
+var modal = document.getElementById("modalContent");
+var button = document.getElementById("modalButton");
+var span = document.getElementsByClassName("modal__close")[0];
 
 button.onclick = function() {
   modal.style.display = "block";
