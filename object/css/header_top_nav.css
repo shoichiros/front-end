@@ -1,0 +1,40 @@
+body, h1 {
+  margin: 0;
+}
+
+.header {
+  background: #ec6a16;
+  height: 60px;
+}
+
+.header__title {
+  padding: 10px;
+  text-align: center;
+}
+
+.header__title a {
+  color: white;
+  text-decoration: none;
+}
+
+.top-nav {
+  background: #888;
+}
+
+.top-nav ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 50%;
+}
+
+.top-nav li {
+  margin: 10px;
+}
+
+.top-nav a {
+  color: white;
+  text-decoration: none;
+}
