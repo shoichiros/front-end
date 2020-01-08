@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+}
+
+.footer {
+  background: rgb(240, 201, 165);
+}
+
+
+.footer p {
+  margin: 0 20px;
+  padding: 10px 0;
+  text-align: right;
+}
+
+.footer__list {
+  display: flex;
+}
+
+.footer__list ul {
+  list-style: none;
+}
+
+.footer__list li {
+  margin: 5px 10px;
+}
+
+.footer__list a {
+  color: #333;
+  text-decoration: none;
+}
