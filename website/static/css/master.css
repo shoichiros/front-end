@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fafafa;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+  background: url('../img/background.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.gradient-color {
+  background: rgb(131, 58, 180);
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  height: 80px;
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-list li {
+  color: #fafafa;
+  margin: 0 20px;
+  list-style: none;
+}
+
+.nav-list a {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.nav-list a:hover {
+  background: rgb(131, 58, 180);
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+main p {
+  font-size: 52px;
+  font-weight: bold;
+  position: absolute;
+  top: 40%;
+  left: 4%;
+  background: rgb(131, 58, 180);
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: auto;
+  margin: 100px auto 0;
+  opacity: .8;
+}
+
+.form h2 {
+  text-align: center;
+}
+
+.form input {
+  color: #333;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.form button {
+  color: #333;
+  background: #fafafa;
+  padding: 10px;
+  margin: 20px 0 0;
+  border: 1px solid #333;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 1s;
+}
+
+.form button:hover {
+  background: rgb(131, 58, 180);
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  color: #fafafa;
+}
+
+footer p {
+  position: absolute;
+  bottom: 2%;
+  right: 5%;
+}

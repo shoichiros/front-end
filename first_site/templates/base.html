@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="{{ url_for('static', filename='master.css') }}">
+  <title>WEBSITE</title>
+</head>
+
+<body>
+  <header id="Header">
+    <h1><a href="{{ url_for('home') }}">NiceBuy</a></h1>
+    <nav>
+      <ul id="Header__Nav">
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Twitter</a></li>
+        <li><a href="">Facebook</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-contents">
+    {% block contents %}
+    {% endblock %}
+  </main>
+
+  <footer id="Footer">
+    <p>Created by Shoichiro Saito.</p>
+    <p>Copyright 2020 NiceBuy All Rights Reserved.</p>
+  </footer>
+</body>
+
+</html>

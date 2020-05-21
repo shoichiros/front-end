@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: fantasy;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 0;
+  padding: 0 100px;
+  width: 100%;
+  height: 80px;
+  z-index: 100;
+}
+
+header h1 {
+  color: #fff;
+}
+
+.top-nav {
+  display: flex;
+}
+
+.top-nav li {
+  margin: 0 20px;
+}
+
+.top-nav a {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.hero {
+  background-image: url("sean.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  animation: show 2s ease forwards 2.5s;
+}
+
+#logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  animation: fill 0.5s ease forwards 3.5s;
+}
+
+#logo path:nth-of-type(1) {
+  stroke-dasharray: 542;
+  stroke-dashoffset: 542;
+  animation: line-anim 2s ease forwards 0.2s;
+}
+
+#logo path:nth-of-type(2) {
+  stroke-dasharray: 527;
+  stroke-dashoffset: 527;
+  animation: line-anim 2s ease forwards 0.3s;
+}
+
+#logo path:nth-of-type(3) {
+  stroke-dasharray: 533;
+  stroke-dashoffset: 533;
+  animation: line-anim 2s ease forwards 0.6s;
+}
+
+#logo path:nth-of-type(4) {
+  stroke-dasharray: 232;
+  stroke-dashoffset: 232;
+  animation: line-anim 2s ease forwards 0.9s;
+}
+
+#logo path:nth-of-type(5) {
+  stroke-dasharray: 568;
+  stroke-dashoffset: 568;
+  animation: line-anim 2s ease forwards 1.2s;
+}
+
+#logo path:nth-of-type(6) {
+  stroke-dasharray: 606;
+  stroke-dashoffset: 606;
+  animation: line-anim 2s ease forwards 1.5s;
+}
+
+#logo path:nth-of-type(7) {
+  stroke-dasharray: 526;
+  stroke-dashoffset: 526;
+  animation: line-anim 2s ease forwards 1.8s;
+}
+
+#logo path:nth-of-type(8) {
+  stroke-dasharray: 564;
+  stroke-dashoffset: 564;
+  animation: line-anim 2s ease forwards 2.1s;
+}
+
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+    filter: none;
+  }
+}
+
+@keyframes show {
+  to {
+    opacity: 1;
+  }
+}

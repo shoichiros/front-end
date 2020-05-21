@@ -1,0 +1,10 @@
+#responsiveMenu {
+  height: 24px;
+  width: 24px;
+}
+
+#responsiveMenu div {
+  background: #333;
+  margin: 5px 0;
+  padding: 1px 10px;
+}
