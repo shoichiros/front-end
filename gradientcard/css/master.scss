@@ -1,0 +1,370 @@
+$main_bg_color: #404040;
+$font_color: #393939;
+$sub_color: #fafafa;
+$media-md: 600px;
+@mixin md {
+  @media screen and (max-width: $media-md) {
+    @content;
+  }
+}
+@mixin mainWidthHeight($max_width: 1920px, $height: 40px) {
+  width: 100%;
+  max-width: $max_width;
+  height: $height;
+}
+@mixin flexd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin skewBackground($bgHeight: 300%, $pos1: bottom, $pos2: left) {
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: $main_bg_color;
+    width: 100%;
+    height: $bgHeight;
+    transform: skewY(3deg);
+    transform-origin: $pos1 $pos2;
+    z-index: -1;
+  }
+}
+@mixin gradientShadow($bg: rgb(131,58,180), $shadow0: rgba(131,58,180,0.5), $shadow50: rgba(253,29,29,0.5), $shadow100: rgba(252,176,69,0.5)) {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: $bg;
+    background: linear-gradient(90deg, $shadow0 0%, $shadow50 50%, $shadow100 100%);
+  }
+}
+@mixin linesBottom($lineWidthChange: 40%) {
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba($main_bg_color, 0.5);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: $lineWidthChange;
+    height: 2px;
+    background-color: rgb(235, 107, 52);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $font_color;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI", Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol" !important;
+  outline: none;
+}
+
+body,
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: $sub_color;
+  position: relative;
+  z-index: -2;
+}
+/* header */
+.header {
+  @include mainWidthHeight($height: 50px);
+  @include flexd;
+  background-color: $main_bg_color;
+
+  svg {
+    width: 85px;
+    height: 30px;
+  }
+}
+/* header nav */
+.header_nav {
+  @include mainWidthHeight;
+  @include flexd;
+  background-color: $main_bg_color;
+  position: relative;
+  @include skewBackground;
+}
+
+.header_nav__lists {
+  @include flexd;
+  overflow-x: auto;
+
+  li {
+    margin: 0 10px;
+    list-style: none;
+
+    a {
+      color: $sub_color;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.home_link {
+  background: -webkit-linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* main contents */
+.main_contents {
+  max-width: 1140px;
+  width: 100%;
+  height: auto;
+  margin: 5px auto 20px;
+}
+
+.main_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: minmax(100px, auto);
+}
+/* contents card */
+.card {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  max-width: 900px;
+  position: relative;
+  cursor: pointer;
+
+  h2 {
+    color: $sub_color;
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding: 0 20px 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  a {
+    text-decoration: none;
+    color: $sub_color;
+  }
+}
+
+.box1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  @include md {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+}
+
+.card_img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+  @include gradientShadow;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.cat_wordpress {
+  @include gradientShadow($bg: rgb(2,0,36),$shadow0: rgba(2,0,36,0.5),$shadow50: rgba(9,9,121,0.5) ,$shadow100: rgba(0,212,255,0.5));
+}
+
+.cat_css {
+  @include gradientShadow($bg: rgb(34,193,195),$shadow0: rgba(34,193,195,0.5),$shadow50: rgba(159,190,110,0.5) ,$shadow100: rgba(253,187,45,0.5));
+}
+
+.cat_javascript {
+  @include gradientShadow($bg: rgb(63,94,251),$shadow0: rgba(63,94,251,0.5),$shadow50: rgba(167,81,172,0.5) ,$shadow100: rgba(252,70,107,0.5));
+}
+
+.sub_content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px 20px 0;
+  z-index: 10;
+}
+
+.card_category {
+  font-size: 1.1rem;
+  margin: 0 10px 0 0;
+}
+
+.card_tag {
+  font-size: 0.8rem;
+  margin: 0 5px;
+}
+/* pagination */
+.pagination {
+  @include flexd;
+  margin: 20px 0 100px;
+
+  a,
+  span {
+    font-size: 20px;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+}
+
+.current {
+  background-color: $main_bg_color;
+  color: $sub_color;
+  border-radius: 5px;
+}
+/* footer */
+.footer {
+  @include mainWidthHeight($height: 500px);
+  text-align: center;
+  padding: 100px 0 0;
+  background-color: $main_bg_color;
+  position: relative;
+  @include skewBackground($bgHeight: 100%, $pos1: bottom, $pos2: right);
+
+  li {
+    list-style: none;
+    margin: 0 0 10px;
+
+    a {
+      color: $sub_color;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.copyright {
+  svg {
+    margin: 0 0 10px;
+  }
+
+  span {
+    color: #999999;
+    display: block;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin: 0 0 5px;
+  }
+}
+/* post page */
+.post_container {
+  width: 70%;
+  height: auto;
+  padding: 50px 0;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 1.6rem;
+    margin: 30px 0;
+    position: relative;
+    @include linesBottom;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin: 50px 0 30px;
+    position: relative;
+    @include linesBottom($lineWidthChange: 60%);
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin: 50px 0 30px;
+    position: relative;
+    @include linesBottom($lineWidthChange: 80%)
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  p {
+    font-size: 1rem;
+    margin: 40px 5px;
+    letter-spacing: 0.1rem;
+  }
+
+  ul {
+    margin: 0 0 20px;
+    padding: 25px;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    border-radius: 10px;
+    background-color: rgba(244, 121, 7, 0.3);
+
+    li {
+      margin: 15px 25px;
+    }
+  }
+
+  a {
+    color: rgb(0, 141, 186);
+    font-weight: bold;
+    font-size: 1rem;
+    word-wrap: break-word;
+  }
+
+  strong {
+    color: red;
+  }
+
+  blockquote {
+    width: 100%;
+    height: auto;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid rgba($main_bg_color, 0.2);
+
+    a {
+      display: block;
+      text-align: right;
+      font-style: italic;
+    }
+  }
+  @include md {
+    width: 100%;
+    padding: 20px 15px;
+
+    h1 {
+      font-size: 1.3rem;
+      margin: 10px 0;
+    }
+  }
+}
+/* 404 not found */
+.not_found {
+  width: 100%;
+  margin: 100px 0;
+  height: 100px;
+
+  h2,
+  p {
+    text-align: center;
+  }
+}
