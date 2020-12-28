@@ -1,70 +1,4 @@
-$main_bg_color: #404040;
-$font_color: #393939;
-$sub_color: #fafafa;
-$media-md: 600px;
-@mixin md {
-  @media screen and (max-width: $media-md) {
-    @content;
-  }
-}
-@mixin mainWidthHeight($max_width: 1920px, $height: 40px) {
-  width: 100%;
-  max-width: $max_width;
-  height: $height;
-}
-@mixin flexd {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@mixin skewBackground($bgHeight: 300%, $pos1: bottom, $pos2: left) {
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: $main_bg_color;
-    width: 100%;
-    height: $bgHeight;
-    transform: skewY(3deg);
-    transform-origin: $pos1 $pos2;
-    z-index: -1;
-  }
-}
-@mixin gradientShadow($bg: rgb(131,58,180), $shadow0: rgba(131,58,180,0.5), $shadow50: rgba(253,29,29,0.5), $shadow100: rgba(252,176,69,0.5)) {
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    background: $bg;
-    background: linear-gradient(90deg, $shadow0 0%, $shadow50 50%, $shadow100 100%);
-  }
-}
-@mixin linesBottom($lineWidthChange: 40%) {
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: rgba($main_bg_color, 0.5);
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: $lineWidthChange;
-    height: 2px;
-    background-color: rgb(235, 107, 52);
-  }
-}
+@import "variables", "mixin", "contact_form";
 
 * {
   margin: 0;
@@ -83,6 +17,7 @@ html {
   position: relative;
   z-index: -2;
 }
+
 /* header */
 .header {
   @include mainWidthHeight($height: 50px);
