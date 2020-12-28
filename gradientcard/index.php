@@ -1,9 +1,12 @@
 <?php get_header(); ?>
 
+    <!-- main contents start -->
     <div class="main_container">
     <?php if ( have_posts() ): while ( have_posts() ): the_post();
       $counter++;
     ?>
+
+      <!-- card contents start  -->
       <?php if ($counter==1): ?>
         <div onclick="cardClickToPost('<?php the_permalink( $post->post_id ); ?>')" class="card box1">
       <?php else: ?>
@@ -41,9 +44,11 @@
     </div>
     <?php endwhile; endif; ?>
     </div>
+    <!-- card contents end -->
 
     <nav class="pagination">
       <?php pagination_bar(); ?>
     </nav>
+    <!-- main contents end -->
 
 <?php  get_footer(); ?>
