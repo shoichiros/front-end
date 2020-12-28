@@ -1,0 +1,7 @@
+version 1.1.1
+- Default "Quicktags" remove at functions.php
+- Added custom "Quicktags" at functions.php
+
+version 1.1.0
+- SCSS file divided(added "mixin", "variables" and "contact_form")
+- "Contact Form 7" plugin CSS created(class "contact_form_contents")
