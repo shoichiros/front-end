@@ -61,7 +61,7 @@ function removed_scripts_styles(){
 
 add_action('wp_enqueue_scripts', 'removed_scripts_styles');
 
-/* jQuery */
+/* remove jQuery */
 function dequeue_jquery( $scripts ){
     if(!is_admin()){
         $scripts->remove( 'jquery' );
@@ -69,3 +69,32 @@ function dequeue_jquery( $scripts ){
 }
 
 add_filter( 'wp_default_scripts', 'dequeue_jquery' );
+
+/* leave quicktags */
+function leave_quicktags( $qtInit ) {
+	$qtInit['buttons'] = 'link,ul,ol,li,fullscreen';
+	return $qtInit;
+}
+
+add_filter('quicktags_settings', 'leave_quicktags');
+
+/* add again admin editor quicktags */
+function add_quicktags() {
+	if( wp_script_is('quicktags') ) {
+?>
+	<script type="text/javascript">
+	  QTags.addButton( 'mystrong', 'strong', '<strong>', '</strong>' );
+		QTags.addButton( 'h1', 'h1', '<h1>', '</h1>' );
+		QTags.addButton( 'h2', 'h2', '<h2>', '</h2>' );
+		QTags.addButton( 'h3', 'h3', '<h3>', '</h3>' );
+		QTags.addButton( 'preHTML', 'preHTML', '<pre class="EnlighterJSRAW" data-enlighter-language="html" data-enlighter-group="" data-enlighter-title="">', '</pre>' );
+		QTags.addButton( 'preCSS', 'preCSS', '<pre class="EnlighterJSRAW" data-enlighter-language="css" data-enlighter-group="" data-enlighter-title="">', '</pre>' );
+		QTags.addButton( 'preSCSS', 'preSCSS', '<pre class="EnlighterJSRAW" data-enlighter-language="scss" data-enlighter-group="" data-enlighter-title="">', '</pre>' );
+		QTags.addButton( 'dhline', 'dhline', 'data-enlighter-highlight=""', '' );
+		QTags.addButton( 'style', 'style', '<style>', '</style>' );
+	</script>
+<?php
+	}
+}
+
+add_action( 'admin_print_footer_scripts', 'add_quicktags' );
