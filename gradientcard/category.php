@@ -12,19 +12,18 @@
     $cat_id = get_cat_ID( $cat_name );
     $cat_link = get_category_link( $cat_id );
   ?>
-  <?php if ($counter==1) {
-    echo '<div class="card box1">';
-  } else {
-    echo '<div class="card">';
-  }
-  ?>
+  <?php if ($counter==1): ?>
+    <div onclick="cardClickToPost('<?php the_permalink( $post->post_id ); ?>')" class="card box1">
+  <?php else: ?>
+    <div onclick="cardClickToPost('<?php the_permalink( $post->post_id ); ?>')" class="card">
+  <?php endif; ?>
   <div class="card_img cat_<?php echo $cat_slug; ?>">
     <?php
     if (has_post_thumbnail()):
       the_post_thumbnail();
     ?>
     <?php else: ?>
-      <img src="<?php echo get_template_directory_uri(); ?>/img/pc_woman.jpg" alt="contents img" />
+      <img src="<?php echo get_template_directory_uri(); ?>/img/not_image.jpg" alt="contents img" />
     <?php endif; ?>
   </div>
   <h2><a href="<?php the_permalink( $post->post_id ); ?>"><?php the_title(); ?></a></h2>
