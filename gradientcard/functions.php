@@ -2,6 +2,31 @@
 /* Post menu add contents */
 add_theme_support('post-thumbnails');
 
+
+/* Meta description on home, singlepost and category */
+function register_meta_description() {
+	global $post;
+
+	if ( is_singular() ) {
+		$post_description = strip_tags( $post->post_content );
+		$post_description = strip_shortcodes( $post->post_content );
+		$post_description = mb_substr( $post_description, 0, 300, 'utf-8' );
+		echo '<meta name="description" content="' . $post_description . '">';
+	}
+
+	if( is_home() ) {
+		echo '<meta name="description" content="' . get_bloginfo( 'description' ) . '">';
+	}
+
+	if( is_category() ) {
+		$cat_description = strip_tags( category_description() );
+		echo '<meta name="description" content="' . $cat_description . '">';
+	}
+}
+
+add_action( 'wp_head', 'register_meta_description' );
+
+
 /* "index.php" pagination */
 function pagination_bar() {
 	global $wp_query;
@@ -22,6 +47,7 @@ function pagination_bar() {
 	}
 }
 
+
 /* Custom menu register */
 /* wp_nav_menu($arrayname = array('theme_location' => 'left name', 'menu' => 'right name' );) */
 function register_menu() {
@@ -33,6 +59,8 @@ function register_menu() {
 
 add_action('init', 'register_menu');
 
+
+/* Remove head tag contents */
 /* Remove action */
 function removed_scripts_styles(){
   if( !is_admin() ){
@@ -70,6 +98,8 @@ function dequeue_jquery( $scripts ){
 
 add_filter( 'wp_default_scripts', 'dequeue_jquery' );
 
+
+/* Quick tag remove and add */
 /* leave quicktags */
 function leave_quicktags( $qtInit ) {
 	$qtInit['buttons'] = 'link,ul,ol,li,fullscreen';
