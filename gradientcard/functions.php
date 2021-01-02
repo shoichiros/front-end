@@ -9,8 +9,7 @@ function register_meta_description() {
 
 	if ( is_singular() ) {
 		$post_description = strip_tags( $post->post_content );
-		$post_description = strip_shortcodes( $post->post_content );
-		$post_description = mb_substr( $post_description, 0, 300, 'utf-8' );
+		$post_description = mb_substr( $post_description, 0, 140, 'utf-8' );
 		echo '<meta name="description" content="' . $post_description . '">';
 	}
 
