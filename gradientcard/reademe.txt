@@ -1,6 +1,11 @@
+version 1.1.2
+- Changed Card post link for JavaScript in category.php
+- Changed default post image "not_image.jpg" in category.php
+- Added meta description in functions.php
+
 version 1.1.1
-- Default "Quicktags" remove at functions.php
-- Added custom "Quicktags" at functions.php
+- Default "Quicktags" remove in functions.php
+- Added custom "Quicktags" in functions.php
 
 version 1.1.0
 - SCSS file divided(added "mixin", "variables" and "contact_form")
