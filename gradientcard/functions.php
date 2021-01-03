@@ -4,11 +4,12 @@ add_theme_support('post-thumbnails');
 
 
 /* Meta description on home, singlepost and category */
+/* classic editor show excerpt text box */
 function register_meta_description() {
 	global $post;
 
 	if ( is_singular() ) {
-		$post_description = strip_tags( $post->post_content );
+		$post_description = strip_tags( $post->post_excerpt );
 		$post_description = mb_substr( $post_description, 0, 140, 'utf-8' );
 		echo '<meta name="description" content="' . $post_description . '">';
 	}
