@@ -3,6 +3,10 @@
     @content;
   }
 }
+@mixin widthHeightOnly($height: 50px) {
+  width: 100%;
+  height: $height;
+}
 @mixin mainWidthHeight($max_width: 1920px, $height: 40px) {
   width: 100%;
   max-width: $max_width;

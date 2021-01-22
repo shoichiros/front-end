@@ -20,7 +20,7 @@ html {
 
 /* header */
 .header {
-  @include mainWidthHeight($height: 50px);
+  @include widthHeightOnly();
   @include flexd;
   background-color: $main_bg_color;
 
@@ -31,11 +31,11 @@ html {
 }
 /* header nav */
 .header_nav {
-  @include mainWidthHeight;
+  @include widthHeightOnly($height: 40px);
   @include flexd;
   background-color: $main_bg_color;
   position: relative;
-  @include skewBackground;
+  @include skewBackground($bgHeight: 400%);
 }
 
 .header_nav__lists {
@@ -172,7 +172,7 @@ html {
 }
 /* footer */
 .footer {
-  @include mainWidthHeight($height: 500px);
+  @include widthHeightOnly($height: 500px);
   text-align: center;
   padding: 100px 0 0;
   background-color: $main_bg_color;
