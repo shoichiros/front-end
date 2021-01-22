@@ -1,3 +1,7 @@
+version 1.1.5
+- Fixed SCSS files, header, footer and navbar width display 100%
+- Mixin file, Maked mixin "widthHeightOnly"
+
 version 1.1.4
 - Changed post description, from "post_content" to "post_excerpt" in functions.php
 
