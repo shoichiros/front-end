@@ -91,7 +91,7 @@ add_action('wp_enqueue_scripts', 'removed_scripts_styles');
 
 /* remove jQuery */
 function dequeue_jquery( $scripts ){
-    if(!is_admin()){
+    if( !is_admin() ){
         $scripts->remove( 'jquery' );
     }
 }
